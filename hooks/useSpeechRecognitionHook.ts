@@ -3,7 +3,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 let recognition: any = null;
-if("webkitSpeechRecognition" in window) {
+if(typeof window !== 'undefined' && "webkitSpeechRecognition" in window) {
     recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
     recognition.lang = "en-US";
